@@ -21,7 +21,7 @@ public class Board15(){
    
    //Displays the board in ASCII representation
    public void displayBoard(){
-   ;
+      ;
    }
    
    //Move peg from fromHole to toHole
@@ -46,17 +46,27 @@ public class Board15(){
    
    //Finds the hole that is between two holes
    private Hole findMiddleHole(Hole h1, Hole h2){
+      Hole middleHole;
+      
       int middleHoleRow = (h1.row + h2.row)/2;
       int middleHoleColumn = (h1.column + h2.column)/2
       //  search board array for hole with this coordinate
+      for(Hole h: holes){
+         if(h.row == middleHoleRow && h.column == middleHoleColumn){
+            middleHole = h;
+         }
+      }
+      
+      return middleHole;
    }
    
    private boolean isHoleTwoAway(Hole h1, Hole h2){
-      ;
-   }
-   
-   private boolean isHoleTwoAway(){
       //check if hole is two rows away OR two "columns" away AND that the distance between either is 0 or 2
+      return (
+         (Math.abs(h1.row - h2.row) == 2 && Math.abs(h1.column - h2.column) == 0)
+         || (Math.abs(h1.row - h2.row) == 0 && Math.abs(h1.column - h2.column) == 2)
+         || (Math.abs(h1.row - h2.row) == 2 && Math.abs(h1.column - h2.column) == 2)
+         )
    }
 
 }
