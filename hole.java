@@ -5,13 +5,15 @@
 
 public class hole{
 //variables for the hole object
-boolean hole=true;
-String name;
+boolean hole;
+int row;
+int column;
  
 //constructor that takes in a name and a boolean to check if filled
-hole(String Name,boolean empty){
+hole(int rowA, int columnB,boolean empty){
 
-name=Name;
+row=rowA;
+column=columnB;
 hole=empty;
 
 }
@@ -21,9 +23,14 @@ public boolean isEmpty(){
    return hole;
 }
 
-//method that gives the user the name of the hole
-public String name(){
-   return name;   
+//method that returns the row that the hole is on
+public int row(){
+   return row;   
+}
+
+//method that returns the column that the hole is on
+public int column(){
+   return column;
 }
 
 //changes the hole to empty or filled
