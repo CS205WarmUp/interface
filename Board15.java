@@ -30,10 +30,10 @@ public class Board15(){
          System.out.println("Move is not legal");
       }
       else{
-         // ?? Need a method in Hole to update these ??
-         fromHole.empty = true
-         toHole.empty = false
-         findMiddleHole(fromHole,toHole).empty = true
+         //change the states of each involved hole
+         fromHole.changeHole();
+         toHole.changeHole();
+         findMiddleHole(fromHole,toHole).changeHole();
       }
    }
    
@@ -61,12 +61,15 @@ public class Board15(){
    }
    
    private boolean isHoleTwoAway(Hole h1, Hole h2){
-      //check if hole is two rows away OR two "columns" away AND that the distance between either is 0 or 2
+      // Difference between holes must be 2 or 4, with either row distance or column distance being 2
+      diffRow = h1.row - h2.row;
+      diffCol = h1.column - h2.column;
       return (
-         (Math.abs(h1.row - h2.row) == 2 && Math.abs(h1.column - h2.column) == 0)
-         || (Math.abs(h1.row - h2.row) == 0 && Math.abs(h1.column - h2.column) == 2)
-         || (Math.abs(h1.row - h2.row) == 2 && Math.abs(h1.column - h2.column) == 2)
-         )
+         ((Math.abs(diffRow + diffCol) == 2)
+         || (Math.abs(diffRow + diffCol) ==4))
+         &&
+         (diffRow == 2 || diffCol == 2)
+         );
    }
 
 }
