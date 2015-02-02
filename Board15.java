@@ -1,12 +1,19 @@
-public class Board15(){
+public class Board15{
    private Hole[] holes;
    
    public Board15(){
+      //Creates an array of holes, then constructs each hole with row/column (1,1 then 2,1 then 2,2 then 3,1...) pairs and sets them all to occupied
       this.holes = new Hole[15];
-      for(Hole hole : holes){
-         hole.empty = false;
+      for(int i = 0; i < 15; i++){
+         for(int j = 1; j <= 5; j++){
+            for( int k = 1; k<=j; k++){
+               holes[i] = new Hole(j,k,true);
+               i++;
+            }
+         }
       } 
-      holes[5].empty = true; 
+      //Make the middle hole empty
+      holes[4].changeHole(); 
    }
    
    //Counts the remaining pegs on the board
@@ -17,6 +24,7 @@ public class Board15(){
             count++;
          }
       }
+      return count;
    }
    
    //Displays the board in ASCII representation
@@ -40,16 +48,17 @@ public class Board15(){
    
    
    //Checks if the move is allowed
-   private boolean isMoveLegal(Hole fromHole, toHole){
-      return (isHoleTwoAway() && !findMiddleHole.isEmpty());
+   private boolean isMoveLegal(Hole fromHole, Hole toHole){
+      return (isHoleTwoAway(fromHole, toHole) && !(findMiddleHole(fromHole, toHole).isEmpty()));
    }
    
    //Finds the hole that is between two holes
    private Hole findMiddleHole(Hole h1, Hole h2){
-      Hole middleHole;
+      //initialized to dummy hole 
+      Hole middleHole = new Hole(0,0,false);
       
       int middleHoleRow = (h1.row + h2.row)/2;
-      int middleHoleColumn = (h1.column + h2.column)/2
+      int middleHoleColumn = (h1.column + h2.column)/2;
       //  search board array for hole with this coordinate
       for(Hole h: holes){
          if(h.row == middleHoleRow && h.column == middleHoleColumn){
@@ -62,8 +71,8 @@ public class Board15(){
    
    private boolean isHoleTwoAway(Hole h1, Hole h2){
       // Difference between holes must be 2 or 4, with either row distance or column distance being 2
-      diffRow = h1.row - h2.row;
-      diffCol = h1.column - h2.column;
+      int diffRow = h1.row() - h2.row();
+      int diffCol = h1.column() - h2.column();
       return (
          ((Math.abs(diffRow + diffCol) == 2)
          || (Math.abs(diffRow + diffCol) ==4))

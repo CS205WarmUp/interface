@@ -3,14 +3,14 @@
 //warm up project
 
 
-public class hole{
+public class Hole{
 //variables for the hole object
 boolean hole;
 int row;
 int column;
  
 //constructor that takes in a name and a boolean to check if filled
-hole(int rowA, int columnB,boolean empty){
+Hole(int rowA, int columnB,boolean empty){
 
 row=rowA;
 column=columnB;
