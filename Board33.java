@@ -46,6 +46,20 @@ public class Board33{
       ;
    }
    
+   public void instructions(){
+      System.out.println("This is English peg solitaire\n" +
+                          "The goal of the game is to remove all but one peg from the board\n"+
+                          "We represent holes with pegs with capital letters, and empty spaces with lower case letter\n"+
+                          "To remove a peg, you jump over it with a neighboring peg to an empty hole.\n"+
+                          "You can jump horizontally or vertically, but not diagonally\n"+
+                          "First, enter which peg you want to move. Then enter with hole you want to move to.\n"+
+                          "For example, you first move might be:\n"+
+                          ">N\n"+
+                          ">P\n"+
+                          "\n"+
+                          "Have fun!\n");
+   }
+   
    //Move peg from fromHole to toHole
    public void move(Hole fromHole, Hole toHole){
       if(!isMoveLegal(fromHole, toHole)){

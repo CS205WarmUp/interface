@@ -1,7 +1,5 @@
 public class Board15{
-   private Hole[] holes;
-   
-   public Board15(){
+   private public   public Board15(){
       //Creates an array of holes, then constructs each hole with row/column (1,1 then 2,1 then 2,2 then 3,1...) pairs and sets them all to occupied
       this.holes = new Hole[15];
       for(int i = 0; i < 15; i++){
@@ -30,6 +28,20 @@ public class Board15{
    //Displays the board in ASCII representation
    public void displayBoard(){
       ;
+   }
+   
+   public void instructions(){
+      System.out.println("This is triangle peg solitaire\n" +
+                          "The goal of the game is to remove all but one peg from the board\n"+
+                          "We represent holes with pegs with capital letters, and empty spaces with lower case letter\n"+
+                          "To remove a peg, you jump over it with a neighboring peg to an empty hole.\n"+
+                          "You can jump laterally on a line, or on a diagonal\n"+
+                          "First, enter which peg you want to move. Then enter with hole you want to move to.\n"+
+                          "For example, you first move might be:\n"+
+                          ">L\n"+
+                          ">E\n"+
+                          "\n"+
+                          "Have fun!\n");
    }
    
    //Move peg from fromHole to toHole
