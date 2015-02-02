@@ -29,5 +29,17 @@ public class Board33{
       //Make the middle hole empty
       holes[16].changeHole(); 
    }
+   
+   
+   private boolean isHoleTwoAway(Hole h1, Hole h2){
+      // Difference between holes must be 2 with either row distance or column distance being 2
+      int diffRow = h1.row() - h2.row();
+      int diffCol = h1.column() - h2.column();
+      return (
+         ((Math.abs(diffRow + diffCol) == 2))
+         &&
+         (diffRow == 2 || diffCol == 2)
+         );
+   }
 
 }
