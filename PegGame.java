@@ -39,6 +39,10 @@ public class PegGame
        
           if(gameChoice == 1){
           
+            // calling method for playing triangle peg game 
+            triangleGame();  
+          
+          
           //call class object for traingle peg game 
           
           System.out.println("Triangle Peg Game");
@@ -80,9 +84,124 @@ public class PegGame
        catch( InputMismatchException e)
        {
          System.out.println("Invalid input type: Program terminating");
-       }// end of catch  
+       }// end of catch
     
    
-   }
+   }//end of main
    
-}
+   
+   public static void triangleGame(){
+   
+      //variables 
+      String input1,
+             input2;
+     char fromHole,
+            toHole; 
+             
+      boolean legal; 
+      
+      
+      //calling to the board class to create instance to create array for board game 
+      Board15 game = new Board15();
+      
+      //call instructions for triangle peg game method 
+      //game.instructions(); 
+      while(true){
+      // showing user the board
+      game.displayBoard(); 
+      
+      boolean moveIsLegal = false;
+      while(!moveIsLegal){
+         //creating scanner for asking player what moves they want to make. 
+         
+         Scanner keyboard = new Scanner(System.in);
+         //try
+         //{
+            System.out.println("Select a hole with a peg that you want to move? : ");
+            
+            input1 = keyboard.nextLine(); 
+            fromHole = input1.charAt(0);
+         //}//end of try
+         // catch( InputMismatchException e)
+         //{
+         //System.out.println("Invalid input type: Program terminating");
+         //}// end of catch
+         
+         //while(!( game.holes[letterToHole(fromHole)].isEmpty() == true && letterToHole(fromHole)>=0 && letterToHole(fromHole)<=15)){
+            //System.out.println("Select a hole with a peg that you want to move? : ");
+         
+            //input1 = keyboard.nextLine(); 
+            //fromHole = input1.charAt(0);
+         //}//end of while 
+         
+         System.out.println("Which hole would you like to move that peg to? : ");
+         
+         input2 = keyboard.nextLine(); 
+         toHole = input2.charAt(0);
+         
+         // make a move 
+         System.out.println("from hole: "+letterToHole(fromHole));
+         System.out.println("to hole: "+letterToHole(toHole));
+         
+         moveIsLegal = game.move(game.holes[letterToHole(fromHole)], game.holes[letterToHole(toHole)]); 
+     }//end while loop
+     }//end of game while 
+      
+      
+      
+      
+      
+      
+   
+   }//end of triangleGame()
+   
+   public static int letterToHole(char letter){
+   
+   int arrayLocation = -1; 
+   
+   switch(letter) {
+         case 'a': 
+         case 'A':arrayLocation = 0; break;
+         case 'b': 
+         case 'B':arrayLocation = 1; break;
+         case 'c': 
+         case 'C':arrayLocation = 2; break;
+         case 'd': 
+         case 'D':arrayLocation = 3; break;
+         case 'e': 
+         case 'E':arrayLocation = 4; break;
+         case 'f': 
+         case 'F':arrayLocation = 5; break;
+         case 'g': 
+         case 'G':arrayLocation = 6; break;
+         case 'h': 
+         case 'H':arrayLocation = 7; break;
+         case 'i': 
+         case 'I':arrayLocation = 8; break;
+         case 'j': 
+         case 'J':arrayLocation = 9; break;
+         case 'k': 
+         case 'K':arrayLocation = 10; break;
+         case 'l': 
+         case 'L':arrayLocation = 11; break;
+         case 'm': 
+         case 'M':arrayLocation = 12; break;
+         case 'n': 
+         case 'N':arrayLocation = 13; break;
+         case 'o': 
+         case 'O':arrayLocation = 14; break;
+         default: break;
+         
+         }//end of switch
+         
+         return arrayLocation; 
+    
+   
+   }//end of letterToHole
+   
+ }//end of pegGame 
+   
+   
+   
+   
+    
