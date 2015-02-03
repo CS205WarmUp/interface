@@ -92,5 +92,56 @@ public class Board15{
          (diffRow == 2 || diffCol == 2)
          );
    }
+   
+   public boolean anyMovesLeft(){
+      //For each hole:
+      //-------v this peg can jump-----v This peg to ----------v This hole OR over -----v This peg to ------v this hole
+      if(holes[0].isEmpty() && ((holes[1].isEmpty() && !holes[3].isEmpty()) || holes[2].isEmpty() && !holes[5].isEmpty())){
+         return true;
+      if(holes[1].isEmpty() && (holes[3].isEmpty() && !holes[6].isEmpty() || holes[4].isEmpty() && !holes[8].isEmpty())){
+         return true;
+      }
+      if(holes[2].isEmpty() && (holes[4].isEmpty() && !holes[7].isEmpty() || holes[5].isEmpty() && !holes[9].isEmpty())){
+         return true;
+      }
+      if(holes[3].isEmpty() && (holes[6].isEmpty() && !holes[10].isEmpty() || holes[7].isEmpty() && !holes[12].isEmpty())){
+         return true;
+      }
+      if(holes[4].isEmpty() && (holes[7].isEmpty() && !holes[11].isEmpty() || holes[8].isEmpty() && !holes[13].isEmpty())){
+         return true;
+      }
+      if(holes[5].isEmpty() && (holes[8].isEmpty() && !holes[12].isEmpty() || holes[9].isEmpty() && !holes[14].isEmpty())){
+         return true;
+      }
+      if(holes[6].isEmpty() && (holes[7].isEmpty() && !holes[8].isEmpty()){
+         return true;
+      }
+      if(holes[7].isEmpty() && (holes[8].isEmpty() && !holes[9].isEmpty())){
+         return true;
+      }
+      if(holes[8].isEmpty() && (holes[7].isEmpty() && !holes[6].isEmpty())){
+         return true;
+      }
+      if(holes[9].isEmpty() && (holes[8].isEmpty() && !holes[7].isEmpty())){
+         return true;
+      }
+      if(holes[10].isEmpty() && (holes[6].isEmpty() && !holes[3].isEmpty() || holes[11].isEmpty() && !holes[12].isEmpty())){
+         return true;
+      }
+      if(holes[11].isEmpty() && (holes[7].isEmpty() && !holes[4].isEmpty() || holes[12].isEmpty() && !holes[13].isEmpty())){
+         return true;
+      }
+      if(holes[12].isEmpty() && (holes[7].isEmpty() && !holes[3].isEmpty() || holes[8].isEmpty() && !holes[5].isEmpty())){
+         return true;
+      }
+      if(holes[13].isEmpty() && (holes[8].isEmpty() && !holes[4].isEmpty() || holes[12].isEmpty() && !holes[11].isEmpty())){
+         return true;
+      }
+      if(holes[14].isEmpty() && (holes[9].isEmpty() && !holes[5].isEmpty() || holes[13].isEmpty() && !holes[12].isEmpty())){
+         return true;
+      }
+      return false;
+      }
+   }
 
 }
