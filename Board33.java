@@ -108,5 +108,122 @@ public class Board33{
          (diffRow == 2 || diffCol == 2)
          );
    }
+   
+   public boolean anyMovesLeft(){
+      //incomplete
+      if(holes[0].isEmpty() && ((holes[1].isEmpty() && !holes[2].isEmpty()) || holes[3].isEmpty() && !holes[8].isEmpty())){
+         return true;
+      }
+      if(holes[1].isEmpty() && ((holes[4].isEmpty() && !holes[9]))){
+         return true;
+      }
+      if(holes[2].isEmpty() && ((holes[1].isEmpty() && !holes[0].isEmpty()) || holes[5].isEmpty() && !holes[10].isEmpty())){
+         return true;
+      }
+      if(holes[3].isEmpty() && ((holes[4].isEmpty() && !holes[5].isEmpty()) || holes[8].isEmpty() && !holes[15].isEmpty())){
+         return true;
+      }
+      if(holes[4].isEmpty() && ((holes[9].isEmpty() && !holes[16].isEmpty()))){
+         return true;
+      }
+      if(holes[5].isEmpty() && ((holes[4].isEmpty() && !holes[3].isEmpty()) || holes[10].isEmpty() && !holes[17].isEmpty())){
+         return true;
+      }
+      if(holes[6].isEmpty() && ((holes[7].isEmpty() && !holes[8].isEmpty()) || holes[13].isEmpty() && !holes[20].isEmpty())){
+         return true;
+      }
+      if(holes[7].isEmpty() && ((holes[8].isEmpty() && !holes[9].isEmpty()) || holes[14].isEmpty() && !holes[21].isEmpty())){
+         return true;
+      }
+      
+      
+      if(holes[8].isEmpty() && ((holes[3].isEmpty() && !holes[0].isEmpty()) || holes[7].isEmpty() && !holes[6].isEmpty())
+                               || holes[9].isEmpty() && !holes[10].isEmpty() || holes[15].isEmpty() && !holes[22].isEmpty()){
+         return true;
+      }
+      if(holes[9].isEmpty() && ((holes[4].isEmpty() && !holes[1].isEmpty()) || holes[8].isEmpty() && !holes[7].isEmpty())
+                               || holes[10].isEmpty() && !holes[11].isEmpty() || holes[16].isEmpty() && !holes[23].isEmpty()){
+         return true;
+      }
+      if(holes[10].isEmpty() && ((holes[5].isEmpty() && !holes[2].isEmpty()) || holes[9].isEmpty() && !holes[8].isEmpty())
+                               || holes[11].isEmpty() && !holes[12].isEmpty() || holes[18].isEmpty() && !holes[25].isEmpty()){
+         return true;
+      }
+      
+      if(holes[11].isEmpty() && ((holes[10].isEmpty() && !holes[9].isEmpty()) || holes[18].isEmpty() && !holes[25].isEmpty())){
+         return true;
+      }
+      if(holes[12].isEmpty() && ((holes[11].isEmpty() && !holes[10].isEmpty()) || holes[19].isEmpty() && !holes[26].isEmpty())){
+         return true;
+      }
+      if(holes[13].isEmpty() && ((holes[14].isEmpty() && !holes[15].isEmpty()))){
+         return true;
+      }
+      if(holes[14].isEmpty() && ((holes[15].isEmpty() && !holes[16].isEmpty()))){
+         return true;
+      }
+      if(holes[15].isEmpty() && ((holes[8].isEmpty() && !holes[3].isEmpty()) || holes[14].isEmpty() && !holes[13].isEmpty())
+                               || holes[16].isEmpty() && !holes[17].isEmpty() || holes[22].isEmpty() && !holes[27].isEmpty()){
+         return true;
+      }
+      if(holes[16].isEmpty() && ((holes[9].isEmpty() && !holes[4].isEmpty()) || holes[15].isEmpty() && !holes[14].isEmpty())
+                               || holes[17].isEmpty() && !holes[18].isEmpty() || holes[23].isEmpty() && !holes[28].isEmpty()){
+         return true;
+      }
+      if(holes[17].isEmpty() && ((holes[10].isEmpty() && !holes[5].isEmpty()) || holes[16].isEmpty() && !holes[15].isEmpty())
+                               || holes[18].isEmpty() && !holes[19].isEmpty() || holes[24].isEmpty() && !holes[29].isEmpty()){
+         return true;
+      }
+      if(holes[18].isEmpty() && ((holes[17].isEmpty() && !holes[16].isEmpty()))){
+         return true;
+      }
+      if(holes[19].isEmpty() && ((holes[18].isEmpty() && !holes[17].isEmpty()))){
+         return true;
+      }
+      if(holes[20].isEmpty() && ((holes[13].isEmpty() && !holes[6].isEmpty()) || holes[21].isEmpty() && !holes[22].isEmpty())){
+         return true;
+      }
+      if(holes[21].isEmpty() && ((holes[14].isEmpty() && !holes[7].isEmpty()) || holes[22].isEmpty() && !holes[23].isEmpty())){
+         return true;
+      }
+      if(holes[22].isEmpty() && ((holes[15].isEmpty() && !holes[8].isEmpty()) || holes[21].isEmpty() && !holes[20].isEmpty())
+                               || holes[23].isEmpty() && !holes[24].isEmpty() || holes[27].isEmpty() && !holes[30].isEmpty()){
+         return true;
+      }
+      if(holes[23].isEmpty() && ((holes[16].isEmpty() && !holes[9].isEmpty()) || holes[22].isEmpty() && !holes[21].isEmpty())
+                               || holes[24].isEmpty() && !holes[25].isEmpty() || holes[28].isEmpty() && !holes[31].isEmpty()){
+         return true;
+      }
+      if(holes[24].isEmpty() && ((holes[17].isEmpty() && !holes[10].isEmpty()) || holes[23].isEmpty() && !holes[22].isEmpty())
+                               || holes[25].isEmpty() && !holes[26].isEmpty() || holes[29].isEmpty() && !holes[32].isEmpty()){
+         return true;
+      }
+      if(holes[25].isEmpty() && ((holes[18].isEmpty() && !holes[11].isEmpty()) || holes[24].isEmpty() && !holes[23].isEmpty())){
+         return true;
+      }
+      if(holes[26].isEmpty() && ((holes[25].isEmpty() && !holes[24].isEmpty()) || holes[19].isEmpty() && !holes[12].isEmpty())){
+         return true;
+      }
+      if(holes[27].isEmpty() && ((holes[22].isEmpty() && !holes[15].isEmpty()) || holes[28].isEmpty() && !holes[29].isEmpty())){
+         return true;
+      }
+      if(holes[28].isEmpty() && ((holes[23].isEmpty() && !holes[16].isEmpty()))){
+         return true;
+      }
+      if(holes[29].isEmpty() && ((holes[24].isEmpty() && !holes[17].isEmpty()) || holes[28].isEmpty() && !holes[27].isEmpty())){
+         return true;
+      }
+      if(holes[30].isEmpty() && ((holes[27].isEmpty() && !holes[22].isEmpty()) || holes[31].isEmpty() && !holes[32].isEmpty())){
+         return true;
+      }
+      if(holes[31].isEmpty() && ((holes[28].isEmpty() && !holes[23].isEmpty()))){
+         return true;
+      }
+      if(holes[32].isEmpty() && ((holes[29].isEmpty() && !holes[24].isEmpty()) || holes[31].isEmpty() && !holes[30].isEmpty())){
+         return true;
+      }
+      return false;
+      
+   }
 
 }
