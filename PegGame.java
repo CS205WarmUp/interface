@@ -28,17 +28,26 @@ public class PegGame
     
     String useless = keyboard.nextLine();
     
-    System.out.println("Would you like to play: ");
+    /**System.out.println("Would you like to play: ");
     System.out.println("1. Traingle Peg Game (15 hole)");
     System.out.println("2. English Peg Solitaire (33 hole)");
     System.out.println("3. Quit Program\n");
     
-    System.out.println("Please type the number of the game you would like to play: ");
+    //System.out.println("Please type the number of the game you would like to play: ");*/
     try
     {
-       gameChoice = keyboard.nextInt();
+       //gameChoice = keyboard.nextInt();
         
        while( decision == false){
+         
+         System.out.println("Would you like to play: ");
+         System.out.println("1. Traingle Peg Game (15 hole)");
+         System.out.println("2. English Peg Solitaire (33 hole)");
+         System.out.println("3. Quit Program\n");
+    
+         System.out.println("Please type the number of the game you would like to play: ");
+         
+         gameChoice = keyboard.nextInt();
        
           if(gameChoice == 1){
           
@@ -46,10 +55,14 @@ public class PegGame
             triangleGame();  
           
           
+<<<<<<< Updated upstream
           //call class object for traingle peg game 
           
           System.out.println("Triangle Peg Game");
           decision = true; 
+=======
+          
+>>>>>>> Stashed changes
           
           }//end of if 
           
@@ -58,7 +71,7 @@ public class PegGame
           //call class object for English Peg Solitaire
           
           System.out.println("English Peg Solitaire");
-          decision = true; 
+           
           
           }// end of else if 2
           
@@ -116,10 +129,16 @@ public class PegGame
          
          String useless2 = keyboard.nextLine(); 
          
+<<<<<<< Updated upstream
          while(moreMoves){
+=======
+         while(moreMoves == true){
+         // showing user the board
+         game.displayBoard();
+>>>>>>> Stashed changes
          
-          
          boolean moveIsLegal = false;
+<<<<<<< Updated upstream
 
          
          while(!moveIsLegal){
@@ -130,6 +149,17 @@ public class PegGame
             while(errorCheck1 == false || errorCheck2 == false){ 
          // showing user the board
             game.displayBoard();
+=======
+         
+         
+         while(!moveIsLegal){
+         
+            boolean errorCheck1 = false;
+            boolean errorCheck2 = false;
+            
+            
+            while(errorCheck1 == false){ 
+>>>>>>> Stashed changes
                System.out.println("Select a hole with a peg that you want to move? : ");
                         
                input1 = keyboard.nextLine();
@@ -141,6 +171,10 @@ public class PegGame
                   
                   }//end of if  
                
+            }//end of while 
+        
+         
+            while(errorCheck2 == false){ 
                System.out.println("Which hole would you like to move that peg to? : ");
                         
                input2 = keyboard.nextLine();
@@ -162,7 +196,43 @@ public class PegGame
             
          }//end while loop
          
+<<<<<<< Updated upstream
      }//end of game while 
+=======
+         System.out.println("Would you like to return to the main menu? ((Y)es or (N)o): ");
+     
+         input3 = keyboard.nextLine();
+         mainMenu = input3.charAt(0);
+      
+      
+         }//end of while
+     
+     }//end of if 
+     
+     if(mainMenu == 'Y' ||mainMenu == 'y'){
+      
+         mainMenuDecision = false; 
+         
+      }
+      else{
+         mainMenuDecision = true; 
+         
+      }
+      
+      System.out.println(mainMenuDecision);
+      return mainMenuDecision; 
+        
+        
+     
+     
+     
+     
+     
+     
+     
+     
+      
+>>>>>>> Stashed changes
       
       
       
