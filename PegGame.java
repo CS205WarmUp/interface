@@ -102,9 +102,6 @@ public class PegGame
                toHole = 'z'; 
                 
          boolean legal;
-         boolean moveIsLegal = false;
-         boolean errorCheck1 = false;
-         boolean errorCheck2 = false;
          boolean moreMoves = true; 
           
          
@@ -120,17 +117,19 @@ public class PegGame
          String useless2 = keyboard.nextLine(); 
          
          while(moreMoves){
-         // showing user the board
-         game.displayBoard(); 
          
+          
          boolean moveIsLegal = false;
-         boolean errorCheck1 = false;
-         boolean errorCheck2 = false;
+
          
          while(!moveIsLegal){
-            
-            
-            while(errorCheck1 == false){ 
+
+                     boolean errorCheck1 = false;
+         boolean errorCheck2 = false;
+         
+            while(errorCheck1 == false || errorCheck2 == false){ 
+         // showing user the board
+            game.displayBoard();
                System.out.println("Select a hole with a peg that you want to move? : ");
                         
                input1 = keyboard.nextLine();
@@ -142,10 +141,6 @@ public class PegGame
                   
                   }//end of if  
                
-            }//end of while 
-        
-         
-            while(errorCheck2 == false){ 
                System.out.println("Which hole would you like to move that peg to? : ");
                         
                input2 = keyboard.nextLine();

@@ -3,5 +3,6 @@ public class BoardTest{
       Board15 b = new Board15();
       
       b.instructions();
+      b.displayBoard();
    }
 }
