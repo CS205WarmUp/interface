@@ -42,13 +42,15 @@ public class PegGame
        
           if(gameChoice == 1){
           
+            System.out.println("Triangle Peg Game");
+            
             // calling method for playing triangle peg game 
-            triangleGame();  
+            decision = triangleGame();  
           
           
           //call class object for traingle peg game 
           
-          System.out.println("Triangle Peg Game");
+          
           decision = true; 
           
           }//end of if 
@@ -93,7 +95,7 @@ public class PegGame
    }//end of main
    
    
-   public static void triangleGame(){
+   public static boolean triangleGame(){
    
       //variables 
         String input1,
@@ -116,10 +118,17 @@ public class PegGame
          
          String useless2 = keyboard.nextLine(); 
          
+<<<<<<< Updated upstream
          while(moreMoves){
+=======
+         while(moreMoves == true){
+         // showing user the board
+         game.displayBoard();
+>>>>>>> Stashed changes
          
           
          boolean moveIsLegal = false;
+<<<<<<< Updated upstream
 
          
          while(!moveIsLegal){
@@ -130,6 +139,17 @@ public class PegGame
             while(errorCheck1 == false || errorCheck2 == false){ 
          // showing user the board
             game.displayBoard();
+=======
+         
+         
+         while(!moveIsLegal){
+         
+            boolean errorCheck1 = false;
+            boolean errorCheck2 = false;
+            
+            
+            while(errorCheck1 == false){ 
+>>>>>>> Stashed changes
                System.out.println("Select a hole with a peg that you want to move? : ");
                         
                input1 = keyboard.nextLine();
@@ -161,7 +181,60 @@ public class PegGame
             moveIsLegal = game.move(game.holes[letterToHole(fromHole)], game.holes[letterToHole(toHole)]); 
             
          }//end while loop
-     }//end of game while 
+         moreMoves = game.anyMovesLeft();
+     }//end of game while
+     
+     boolean mainMenuDecision = true;
+     char mainMenu = 'x'; 
+     
+     System.out.println("You have run out of moves with "+ game.countPegs()+ " pegs left.");
+     System.out.println("Game Over!");
+     System.out.println("");
+     System.out.println("Would you like to return to the main menu? ((Y)es or (N)o): ");
+     
+     String input3 = keyboard.nextLine();
+     
+     
+     
+     
+     if(!input3.equals("")){
+     
+      mainMenu = input3.charAt(0);
+      
+      while(!(mainMenu == 'Y' ||mainMenu == 'y' || mainMenu == 'N'||mainMenu == 'n')){
+         
+         System.out.println("Would you like to return to the main menu? ((Y)es or (N)o): ");
+     
+         input3 = keyboard.nextLine();
+         mainMenu = input3.charAt(0);
+      
+      
+         }//end of while
+     
+     }//end of if 
+     
+     if(mainMenu == 'Y' ||mainMenu == 'y'){
+      
+         mainMenuDecision = false; 
+         
+      }
+      else{
+         mainMenuDecision = true; 
+         
+      }
+      
+      return mainMenuDecision; 
+        
+        
+     
+     
+     
+     
+     
+     
+     
+     
+      
       
       
       
