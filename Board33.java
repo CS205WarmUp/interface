@@ -43,7 +43,232 @@ public class Board33{
    
    //Displays the board in ASCII representation
    public void displayBoard(){
-      ;
+      if(holes[0].isEmpty() == true){
+         System.out.print("    A");
+      } 
+      else{
+         System.out.print("    a");
+      } 
+      
+      if(holes[1].isEmpty() == true){
+         System.out.print("B");
+      }
+      else{
+         System.out.print("b");
+      }
+      
+      if(holes[2].isEmpty() == true){
+         System.out.print("C    ");
+      }
+      else{
+         System.out.print("c    ");
+      }
+      
+      System.out.print("\\\n");
+      
+      if(holes[3].isEmpty() == true){
+         System.out.print("    D");
+      }
+      else{
+         System.out.print("    d");
+      }
+      
+      if(holes[4].isEmpty() == true){
+         System.out.print("E");
+      }
+      else{
+         System.out.print("e");
+      }
+      
+      if(holes[5].isEmpty() == true){
+         System.out.print("F    ");
+      }
+      else{
+         System.out.print("f    ");
+      }
+      
+      System.out.print("\n");
+      
+      if(holes[6].isEmpty() == true){
+         System.out.print("G");
+      }
+      else{
+         System.out.print("g");
+      }
+      if(holes[7].isEmpty() == true){
+         System.out.print("H");
+      }
+      else{
+         System.out.print("h");
+      }
+      if(holes[8].isEmpty() == true){
+         System.out.print("I");
+      }
+      else{
+         System.out.print("i");
+      }
+      if(holes[9].isEmpty() == true){
+         System.out.print("J");
+      }
+      else{
+         System.out.print("j");
+      }
+      
+      if(holes[10].isEmpty() == true){
+         System.out.print("K");
+      }
+      else{
+         System.out.print("k");
+      }
+      if(holes[11].isEmpty() == true){
+         System.out.print("L");
+      }
+      else{
+         System.out.print("l");
+      }
+      if(holes[12].isEmpty() == true){
+         System.out.print("M");
+      }
+      else{
+         System.out.print("m");
+      }
+      
+      System.out.print("\n");
+      
+      if(holes[13].isEmpty() == true){
+         System.out.print("N");
+      }
+      else{
+         System.out.print("n");
+      }
+      if(holes[14].isEmpty() == true){
+         System.out.print("O");
+      }
+      else{
+         System.out.print("o");
+      }
+      if(holes[15].isEmpty() == true){
+         System.out.print("P");
+      }
+      else{
+         System.out.print("p");
+      }
+      if(holes[16].isEmpty() == true){
+         System.out.print("Q");
+      }
+      else{
+         System.out.print("q");
+      }
+      if(holes[17].isEmpty() == true){
+         System.out.print("R");
+      }
+      else{
+         System.out.print("r");
+      }
+      if(holes[18].isEmpty() == true){
+         System.out.print("S");
+      }
+      else{
+         System.out.print("s");
+      }
+      if(holes[19].isEmpty() == true){
+         System.out.print("T");
+      }
+      else{
+         System.out.print("t");
+      }
+      
+      System.out.print("\n");
+      
+      if(holes[20].isEmpty() == true){
+         System.out.print("U");
+      }
+      else{
+         System.out.print("u");
+      }
+      
+      
+      if(holes[21].isEmpty() == true){
+         System.out.print("V");
+      }
+      else{
+         System.out.print("v");
+      }
+      if(holes[22].isEmpty() == true){
+         System.out.print("W");
+      }
+      else{
+         System.out.print("w");
+      }
+      if(holes[23].isEmpty() == true){
+         System.out.print("X");
+      }
+      else{
+         System.out.print("x");
+      }
+      if(holes[24].isEmpty() == true){
+         System.out.print("Y");
+      }
+      else{
+         System.out.print("y");
+      }
+      if(holes[25].isEmpty() == true){
+         System.out.print("Z");
+      }
+      else{
+         System.out.print("z");
+      }
+      if(holes[26].isEmpty() == true){
+         System.out.print("!");
+      }
+      else{
+         System.out.print("1");
+      }
+      
+      System.out.print("\n");
+      
+      if(holes[27].isEmpty() == true){
+         System.out.print("@");
+      }
+      else{
+         System.out.print("2");
+      }
+      if(holes[28].isEmpty() == true){
+         System.out.print("#");
+      }
+      else{
+         System.out.print("3");
+      }
+      if(holes[29].isEmpty() == true){
+         System.out.print("$");
+      }
+      else{
+         System.out.print("4");
+      }
+      
+      System.out.print("\n");
+      
+      if(holes[30].isEmpty() == true){
+         System.out.print("%");
+      }
+      else{
+         System.out.print("5");
+      }
+      if(holes[31].isEmpty() == true){
+         System.out.print("^");
+      }
+      else{
+         System.out.print("6");
+      }
+      if(holes[32].isEmpty() == true){
+         System.out.print("&");
+      }
+      else{
+         System.out.print("7");
+      }
+      System.out.print("------------\n");
+      
+      }
    }
    
    public void instructions(){
