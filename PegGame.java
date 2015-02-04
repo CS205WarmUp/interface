@@ -55,14 +55,11 @@ public class PegGame
             triangleGame();  
           
           
-<<<<<<< Updated upstream
           //call class object for traingle peg game 
           
           System.out.println("Triangle Peg Game");
           decision = true; 
-=======
           
->>>>>>> Stashed changes
           
           }//end of if 
           
@@ -129,16 +126,11 @@ public class PegGame
          
          String useless2 = keyboard.nextLine(); 
          
-<<<<<<< Updated upstream
-         while(moreMoves){
-=======
          while(moreMoves == true){
          // showing user the board
          game.displayBoard();
->>>>>>> Stashed changes
          
          boolean moveIsLegal = false;
-<<<<<<< Updated upstream
 
          
          while(!moveIsLegal){
@@ -149,7 +141,6 @@ public class PegGame
             while(errorCheck1 == false || errorCheck2 == false){ 
          // showing user the board
             game.displayBoard();
-=======
          
          
          while(!moveIsLegal){
@@ -159,7 +150,6 @@ public class PegGame
             
             
             while(errorCheck1 == false){ 
->>>>>>> Stashed changes
                System.out.println("Select a hole with a peg that you want to move? : ");
                         
                input1 = keyboard.nextLine();
@@ -196,9 +186,7 @@ public class PegGame
             
          }//end while loop
          
-<<<<<<< Updated upstream
      }//end of game while 
-=======
          System.out.println("Would you like to return to the main menu? ((Y)es or (N)o): ");
      
          input3 = keyboard.nextLine();
@@ -222,25 +210,7 @@ public class PegGame
       System.out.println(mainMenuDecision);
       return mainMenuDecision; 
         
-        
-     
-     
-     
-     
-     
-     
-     
-     
-      
->>>>>>> Stashed changes
-      
-      
-      
-      
-      
-      
-   
-   }//end of triangleGame()
+  }//end of triangleGame()
    
    public static int letterToHole(char letter){
    
