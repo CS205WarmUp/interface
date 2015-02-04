@@ -28,28 +28,36 @@ public class PegGame
     
     String useless = keyboard.nextLine();
     
-    System.out.println("Would you like to play: ");
+    /**System.out.println("Would you like to play: ");
     System.out.println("1. Traingle Peg Game (15 hole)");
     System.out.println("2. English Peg Solitaire (33 hole)");
     System.out.println("3. Quit Program\n");
     
-    System.out.println("Please type the number of the game you would like to play: ");
+    //System.out.println("Please type the number of the game you would like to play: ");*/
     try
     {
-       gameChoice = keyboard.nextInt();
+       //gameChoice = keyboard.nextInt();
         
        while( decision == false){
+         
+         System.out.println("Would you like to play: ");
+         System.out.println("1. Traingle Peg Game (15 hole)");
+         System.out.println("2. English Peg Solitaire (33 hole)");
+         System.out.println("3. Quit Program\n");
+    
+         System.out.println("Please type the number of the game you would like to play: ");
+         
+         gameChoice = keyboard.nextInt();
        
           if(gameChoice == 1){
           
+            System.out.println("Triangle Peg Game");
+            
             // calling method for playing triangle peg game 
-            triangleGame();  
+            decision = triangleGame();  
           
           
-          //call class object for traingle peg game 
           
-          System.out.println("Triangle Peg Game");
-          decision = true; 
           
           }//end of if 
           
@@ -58,7 +66,7 @@ public class PegGame
           //call class object for English Peg Solitaire
           
           System.out.println("English Peg Solitaire");
-          decision = true; 
+           
           
           }// end of else if 2
           
@@ -93,7 +101,7 @@ public class PegGame
    }//end of main
    
    
-   public static void triangleGame(){
+   public static boolean triangleGame(){
    
       //variables 
         String input1,
@@ -116,18 +124,18 @@ public class PegGame
          
          String useless2 = keyboard.nextLine(); 
          
-         while(moreMoves){
+         while(moreMoves == true){
          
-          
          boolean moveIsLegal = false;
-
+         
          
          while(!moveIsLegal){
-
-         boolean errorCheck1 = false;
-         boolean errorCheck2 = false;
          
-            while(errorCheck1 == false || errorCheck2 == false){ 
+            boolean errorCheck1 = false;
+            boolean errorCheck2 = false;
+            
+            
+     while(errorCheck1 == false || errorCheck2 == false){ 
          // showing user the board
             game.displayBoard();
                System.out.println("Select a hole with a peg that you want to move? : ");
@@ -152,6 +160,7 @@ public class PegGame
                   
                   }//end of if  
                
+
             }//end of while
             
             // make a move 
@@ -161,8 +170,61 @@ public class PegGame
             moveIsLegal = game.move(game.holes[letterToHole(fromHole)], game.holes[letterToHole(toHole)]); 
             
          }//end while loop
+         moreMoves = game.anyMovesLeft();
+     }//end of game while
+     
+     boolean mainMenuDecision = true;
+     char mainMenu = 'x'; 
+     
+     System.out.println("You have run out of moves with "+ game.countPegs()+ " pegs left.");
+     System.out.println("Game Over!");
+     System.out.println("");
+     System.out.println("Would you like to return to the main menu? ((Y)es or (N)o): ");
+     
+     String input3 = keyboard.nextLine();
+     
+     
+     
+     
+     if(!input3.equals("")){
+     
+      mainMenu = input3.charAt(0);
+      
+      while(!(mainMenu == 'Y' ||mainMenu == 'y' || mainMenu == 'N'||mainMenu == 'n')){
          
-     }//end of game while 
+         System.out.println("Would you like to return to the main menu? ((Y)es or (N)o): ");
+     
+         input3 = keyboard.nextLine();
+         mainMenu = input3.charAt(0);
+      
+      
+         }//end of while
+     
+     }//end of if 
+     
+     if(mainMenu == 'Y' ||mainMenu == 'y'){
+      
+         mainMenuDecision = false; 
+         
+      }
+      else{
+         mainMenuDecision = true; 
+         
+      }
+      
+      System.out.println(mainMenuDecision);
+      return mainMenuDecision; 
+        
+        
+     
+     
+     
+     
+     
+     
+     
+     
+      
       
       
       
